@@ -1,0 +1,13 @@
+#ifndef AES_CONFIG_H_INCLUDED
+#define AES_CONFIG_H_INCLUDED
+
+#define POLARSSL_AES_C
+//#define POLARSSL_AES_ROM_TABLES
+#define POLARSSL_CIPHER_MODE_CBC
+//#define POLARSSL_CIPHER_MODE_CTR
+//#define POLARSSL_CIPHER_MODE_CFB
+
+//#define POLARSSL_SELF_TEST
+//#define printf      rt_kprintf
+
+#endif // AES_CONFIG_H_INCLUDED
