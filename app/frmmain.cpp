@@ -67,25 +67,11 @@ frmMain::~frmMain()
 
 void frmMain::InitStyle()
 {
-    this->max = false;
     this->location = this->geometry();
     this->setProperty("form", true);
     this->setProperty("CanMove", true);
-    this->setWindowTitle(ui->lab_Title->text());
-    ui->widget_title->setProperty("form", "title");
-    this->setWindowFlags((Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint));
-    //安装事件监听器,让标题栏识别鼠标双击
-    ui->lab_Title->installEventFilter(this);
-
-    IconHelper::Instance()->SetIcon(ui->btnMenu_Close, QChar(0xf00d));
-    IconHelper::Instance()->SetIcon(ui->btnMenu_Max, QChar(0xf2d0));
-    IconHelper::Instance()->SetIcon(ui->btnMenu_Min, QChar(0xf068));
-    IconHelper::Instance()->SetIcon(ui->lab_Ico, QChar(0xf085));
-    IconHelper::Instance()->SetIcon(ui->btnMenu, QChar(0xf0ca));
-    connect(ui->btnMenu_Close, SIGNAL(clicked()), this, SLOT(on_close()));
-    connect(ui->btnMenu_Min, SIGNAL(clicked()), this, SLOT(showMinimized()));
-    connect(ui->btnMenu, SIGNAL(clicked()), this, SLOT(showRightMenu()));
-
+    setAttribute(Qt::WA_DeleteOnClose);
+    setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint  | Qt::WindowCloseButtonHint | Qt::CustomizeWindowHint);
     myHelper::SetStyle(":/qss/blue.css");
 
     //设置对应载体的属性 可自行注释看效果
@@ -278,34 +264,6 @@ void frmMain::btnClick1()
     }
 
 }
-
-bool frmMain::eventFilter(QObject *obj, QEvent *event)
-{
-    if (event->type() == QEvent::MouseButtonDblClick) {
-        this->on_btnMenu_Max_clicked();
-        return true;
-    }
-    return QObject::eventFilter(obj, event);
-}
-
-
-void frmMain::on_btnMenu_Max_clicked()
-{
-    if (max) {
-        this->setGeometry(location);
-        IconHelper::Instance()->SetIcon(ui->btnMenu_Max, QChar(0xf2d0));
-        ui->btnMenu_Max->setToolTip(tr("最大化"));
-        this->setProperty("CanMove", true);
-    } else {
-        location = this->geometry();
-        this->setGeometry(qApp->desktop()->availableGeometry());
-        IconHelper::Instance()->SetIcon(ui->btnMenu_Max, QChar(0xf2d2));
-        ui->btnMenu_Max->setToolTip(tr("还原"));
-        this->setProperty("CanMove", false);
-    }
-    max = !max;
-}
-
 
 void frmMain::on_loadFW_Button_clicked()
 {

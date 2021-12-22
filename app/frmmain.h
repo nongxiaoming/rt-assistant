@@ -22,11 +22,8 @@ public:
     explicit frmMain(QWidget *parent = 0);
     ~frmMain();
 
-protected:
-    bool eventFilter(QObject *obj, QEvent *event);
 
 private slots:
-    void on_btnMenu_Max_clicked();
 
     void on_loadFW_Button_clicked();
 
@@ -60,8 +57,6 @@ private:
      QMenu *m_menu;
 
     void InitStyle();   //初始化无边框窗体
-
-    bool max;           //是否处于最大化状态
 
     QRect location;     //鼠标移动窗体后的坐标位置
 
