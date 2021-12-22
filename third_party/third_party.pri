@@ -7,6 +7,7 @@
 INCLUDEPATH += $$PWD/aes
 INCLUDEPATH += $$PWD/qcustomplot
 INCLUDEPATH += $$PWD/qhexedit
+INCLUDEPATH += $$PWD/log4qt
 
 SOURCES += \
     $$PWD/aes/aes.c \
@@ -24,3 +25,5 @@ HEADERS  += \
     $$PWD/qhexedit/qhexedit_p.h\
     $$PWD/qhexedit/xbytearray.h\
     $$PWD/qcustomplot/qcustomplot.h
+
+include($$PWD/log4qt/log4qt.pri)
