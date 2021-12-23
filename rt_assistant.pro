@@ -22,6 +22,7 @@ include($$PWD/assistant/assistant.pri)
 include($$PWD/widgets/widgets.pri)
 include($$PWD/third_party/third_party.pri)
 include($$PWD/utils/utils.pri)
+include($$PWD/version/version.pri)
 
 INCLUDEPATH += $$PWD/src
 

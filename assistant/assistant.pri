@@ -8,12 +8,10 @@ INCLUDEPATH += $$PWD
 
 SOURCES += $$PWD/main.cpp\
            $$PWD/frmmain.cpp \
-           $$PWD/crc32.c \
            $$PWD/searchfrm.cpp
 
 
 HEADERS  += $$PWD/frmmain.h \
-            $$PWD/crc32.h \
             $$PWD/searchfrm.h
 
 
