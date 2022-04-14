@@ -1,6 +1,6 @@
 #include "frmmessagebox.h"
 #include "ui_frmmessagebox.h"
-#include "api/myhelper.h"
+#include "api/uihelper.h"
 
 frmMessageBox::frmMessageBox(QWidget *parent) :
     QDialog(parent),
@@ -8,7 +8,7 @@ frmMessageBox::frmMessageBox(QWidget *parent) :
 {
     ui->setupUi(this);
     this->InitStyle();
-    myHelper::FormInCenter(this);
+    UIHelper::FormInCenter(this);
 }
 
 frmMessageBox::~frmMessageBox()

@@ -1,6 +1,6 @@
 #include "searchfrm.h"
 #include "ui_searchfrm.h"
-#include "api/myhelper.h"
+#include "api/uihelper.h"
 
 
 SearchForm *SearchForm::_instance = 0;
@@ -11,7 +11,7 @@ SearchForm::SearchForm(QWidget *parent) :
 {
     ui->setupUi(this);
     this->InitStyle();
-    myHelper::FormInCenter(this);
+    UIHelper::FormInCenter(this);
     //QObject::connect(Communication::Instance(),&Communication::MsgReady,this,&MsgReady);
 }
 

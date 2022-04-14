@@ -27,8 +27,6 @@ private slots:
 
     void on_writeFW_Button_clicked();
 
-    void on_close();
-
     void timeout();
 
     void btnClick1();

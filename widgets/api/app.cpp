@@ -1,5 +1,5 @@
 #include "app.h"
-#include "myhelper.h"
+#include "uihelper.h"
 
 QString App::AppPath = "";
 

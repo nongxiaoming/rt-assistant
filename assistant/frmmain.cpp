@@ -1,7 +1,6 @@
 #include "frmmain.h"
 #include "ui_frmmain.h"
-#include "api/myhelper.h"
-#include "crc32.h"
+#include "api/uihelper.h"
 #include <QSerialPortInfo>
 #include "searchfrm.h"
 #include "aes.h"
@@ -29,7 +28,7 @@ frmMain::frmMain(QWidget *parent) :
     }
 
     this->InitStyle();
-    myHelper::FormInCenter(this);
+    UIHelper::FormInCenter(this);
 
     ui->cfHexEdit->setReadOnly(true);
     this->connected = false;
@@ -62,7 +61,7 @@ void frmMain::InitStyle()
     this->setProperty("CanMove", true);
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint  | Qt::WindowCloseButtonHint | Qt::CustomizeWindowHint);
-    myHelper::SetStyle(":/qss/blue.css");
+    UIHelper::SetStyle(":/qss/blue.css");
 
     //设置对应载体的属性 可自行注释看效果
     ui->widget1->setProperty("flag", "left");
@@ -179,7 +178,7 @@ void frmMain::changeStyle(int index)
     file_name << ":/qss/silvery.css" << ":/qss/blue.css" << ":/qss/lightblue.css" << ":/qss/darkblue.css" << ":/qss/gray.css" << ":/qss/lightgray.css" << ":/qss/darkgray.css" << ":/qss/black.css"
          << ":/qss/lightblack.css" << ":/qss/darkblack.css" << ":/qss/psblack.css" << ":/qss/flatblack.css" << ":/qss/flatwhite.css";
     this->skin_index = index;
-    myHelper::SetStyle(file_name[index]);
+    UIHelper::SetStyle(file_name[index]);
 }
 void frmMain::changeLanguage()
 {
@@ -215,11 +214,6 @@ void frmMain::LoadConfig()
 
 }
 
-void frmMain::on_close()
-{
-    SaveConfig();
-    close();
-}
 
 void frmMain::btnClick1()
 {
@@ -236,10 +230,10 @@ void frmMain::btnClick1()
             {
                 if(!this->connected)
                 {
-                    myHelper::ShowMessageBoxInfo(tr("设备未连接，请先连接设备。"));
+                    UIHelper::ShowMessageBoxInfo(tr("设备未连接，请先连接设备。"));
                     return;
                 }
-               if(myHelper::ShowMessageBoxQuesion(tr("确定要重启设备吗？"))==QDialog::Accepted)
+               if(UIHelper::ShowMessageBoxQuesion(tr("确定要重启设备吗？"))==QDialog::Accepted)
                {
                }
             }
@@ -281,7 +275,7 @@ void frmMain::on_writeFW_Button_clicked()
 {
     if(!this->connected)
     {
-        myHelper::ShowMessageBoxInfo(tr("请先连接设备后再操作"));
+        UIHelper::ShowMessageBoxInfo(tr("请先连接设备后再操作"));
         return;
     }
 
@@ -309,7 +303,7 @@ void frmMain::on_config_default_pushButton_clicked()
 {
     if(!this->connected)
     {
-        myHelper::ShowMessageBoxInfo(tr("设备未连接，请先连接设备。"));
+        UIHelper::ShowMessageBoxInfo(tr("设备未连接，请先连接设备。"));
         return;
     }
 

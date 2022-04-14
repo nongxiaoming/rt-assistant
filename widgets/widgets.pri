@@ -20,7 +20,7 @@ SOURCES += \
 
 HEADERS  += \
     $$PWD/api/iconhelper.h \
-    $$PWD/api/myhelper.h \
+    $$PWD/api/uihelper.h \
     $$PWD/api/app.h \
     $$PWD/api/appinit.h \
     $$PWD/frmmessagebox.h \

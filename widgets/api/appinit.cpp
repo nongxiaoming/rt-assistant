@@ -1,5 +1,5 @@
 #include "appinit.h"
-#include "myhelper.h"
+#include "uihelper.h"
 
 AppInit::AppInit(QObject *parent) : QObject(parent)
 {
@@ -36,8 +36,8 @@ bool AppInit::eventFilter(QObject *obj, QEvent *evt)
 
 void AppInit::Load()
 {
-    myHelper::SetUTF8Code();
-    myHelper::SetChinese();
+    UIHelper::SetUTF8Code();
+    UIHelper::SetChinese();
     qApp->setFont(QFont(App::AppFontName, App::AppFontSize));
 
     App::AppPath = QApplication::applicationDirPath();

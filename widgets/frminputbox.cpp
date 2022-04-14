@@ -1,6 +1,6 @@
 #include "frminputbox.h"
 #include "ui_frminputbox.h"
-#include "api/myhelper.h"
+#include "api/uihelper.h"
 
 frmInputBox::frmInputBox(QWidget *parent) :
     QDialog(parent),
@@ -8,7 +8,7 @@ frmInputBox::frmInputBox(QWidget *parent) :
 {
     ui->setupUi(this);
     this->InitStyle();
-    myHelper::FormInCenter(this);
+    UIHelper::FormInCenter(this);
 }
 
 frmInputBox::~frmInputBox()
