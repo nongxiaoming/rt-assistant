@@ -1,13 +1,13 @@
-#include "frmmain.h"
-#include "ui_frmmain.h"
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 #include "api/uihelper.h"
 #include <QSerialPortInfo>
 #include "searchfrm.h"
 #include "aes.h"
 
-frmMain::frmMain(QWidget *parent) :
+MainWindow::MainWindow(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::frmMain)
+    ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
@@ -44,17 +44,17 @@ frmMain::frmMain(QWidget *parent) :
 
 }
 
-void frmMain::timeout()
+void MainWindow::timeout()
 {
 
 }
 
-frmMain::~frmMain()
+MainWindow::~MainWindow()
 {
     delete ui;
 }
 
-void frmMain::InitStyle()
+void MainWindow::InitStyle()
 {
     this->location = this->geometry();
     this->setProperty("form", true);
@@ -73,8 +73,8 @@ void frmMain::InitStyle()
     this->setStyleSheet(qss.join(""));
     //准备导航的按钮集合
     //准备对应的图形字体集合
-    pixChar << 0xf109 << 0xf013 << 0xf021 << 0xf1b3  << 0xf011;
-    btns1 << ui->btn11 << ui->btn12 << ui->btn13 << ui->btn14 << ui->btn15;
+    pixChar << 0xf0e4 << 0xf013 << 0xf1d8 << 0xf085  << 0xf072 << 0xf120 << 0xf021  << 0xf15c;
+    btns1 << ui->btn11 << ui->btn12 << ui->btn13 << ui->btn14 << ui->btn15 << ui->btn16 << ui->btn17<< ui->btn18;
 
     //设置对应的按钮的图标显示方案以及是否可以选中以及对应的单击事件
     int count = btns1.count();
@@ -83,9 +83,6 @@ void frmMain::InitStyle()
         btns1.at(i)->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         connect(btns1.at(i), SIGNAL(clicked(bool)), this, SLOT(btnClick1()));
     }
-
-    //调用方法,方法中的对应参数可以查看具体源码
-    //IconHelper::Instance()->setStyle(ui->widget1, btns1, pixChar, 15, 35, 25, "left", 4);
 
     IconHelper::Instance()->setStyle(ui->widget1, btns1, pixChar, 20, 40, 35, "left", 3,
                                      "#609EE9","#434D5C","#1D2530","#F5F7FA","#4B78AF");
@@ -149,11 +146,11 @@ void frmMain::InitStyle()
     QAction* m_support = new QAction(QIcon(":/res/image/about_32.png"),tr("技术支持"), this);
     m_menu->addAction(m_support);
 }
-void frmMain::showRightMenu()
+void MainWindow::showRightMenu()
 {
     m_menu->exec(QCursor::pos());
 }
-void frmMain::changeStyle()
+void MainWindow::changeStyle()
 {
     int i = 0;
     foreach(QAction *act,this->skin_action_list)
@@ -172,7 +169,7 @@ void frmMain::changeStyle()
 
 }
 
-void frmMain::changeStyle(int index)
+void MainWindow::changeStyle(int index)
 {
     QStringList file_name;
     file_name << ":/qss/silvery.css" << ":/qss/blue.css" << ":/qss/lightblue.css" << ":/qss/darkblue.css" << ":/qss/gray.css" << ":/qss/lightgray.css" << ":/qss/darkgray.css" << ":/qss/black.css"
@@ -180,7 +177,7 @@ void frmMain::changeStyle(int index)
     this->skin_index = index;
     UIHelper::SetStyle(file_name[index]);
 }
-void frmMain::changeLanguage()
+void MainWindow::changeLanguage()
 {
     int i = 0;
     foreach(QAction *act,this->language_action_list)
@@ -196,18 +193,18 @@ void frmMain::changeLanguage()
         i++;
     }
 }
-void frmMain::Translate(int index)
+void MainWindow::Translate(int index)
 {
 
 }
-void frmMain::SaveConfig()
+void MainWindow::SaveConfig()
 {
     Config->setValue("/system/skin", this->skin_index);
     Config->setValue("/system/language", this->language_index);
 
 }
 
-void frmMain::LoadConfig()
+void MainWindow::LoadConfig()
 {
     this->skin_index = Config->value("/system/skin").toInt();
     this->language_index = Config->value("/system/language").toInt();
@@ -215,7 +212,7 @@ void frmMain::LoadConfig()
 }
 
 
-void frmMain::btnClick1()
+void MainWindow::btnClick1()
 {
     QToolButton *b = (QToolButton *)sender();
     QString name = b->text();
@@ -226,17 +223,6 @@ void frmMain::btnClick1()
             btns1.at(i)->setChecked(true);
             btns1.at(i)->setIcon(QIcon(IconHelper::Instance()->getPixmap(btns1.at(i), false)));
             ui->stackedWidget->setCurrentIndex(i);
-            if(i==4)
-            {
-                if(!this->connected)
-                {
-                    UIHelper::ShowMessageBoxInfo(tr("设备未连接，请先连接设备。"));
-                    return;
-                }
-               if(UIHelper::ShowMessageBoxQuesion(tr("确定要重启设备吗？"))==QDialog::Accepted)
-               {
-               }
-            }
         } else {
             btns1.at(i)->setChecked(false);
             btns1.at(i)->setIcon(QIcon(IconHelper::Instance()->getPixmap(btns1.at(i), true)));
@@ -245,7 +231,7 @@ void frmMain::btnClick1()
 
 }
 
-void frmMain::on_loadFW_Button_clicked()
+void MainWindow::on_loadFW_Button_clicked()
 {
     QFileDialog *fileDialog = new QFileDialog(this);//创建一个QFileDialog对象，构造函数中的参数可以有所添加。
        fileDialog->setWindowTitle(tr("打开固件"));//设置文件打开对话框的标题
@@ -271,7 +257,7 @@ void frmMain::on_loadFW_Button_clicked()
        }
 }
 
-void frmMain::on_writeFW_Button_clicked()
+void MainWindow::on_writeFW_Button_clicked()
 {
     if(!this->connected)
     {
@@ -281,13 +267,13 @@ void frmMain::on_writeFW_Button_clicked()
 
 }
 
-void frmMain::update_log_output(QString info)
+void MainWindow::update_log_output(QString info)
 {
     QString time= QDateTime::currentDateTime ().toString ("yyyy-MM-dd hh:mm:ss");
     ui->Log_textEdit->append (tr("[%1] %2").arg (time).arg (info));
 }
 
-void frmMain::progressBar_update(int per)
+void MainWindow::progressBar_update(int per)
 {
   if(per > 100)
   {
@@ -299,7 +285,7 @@ void frmMain::progressBar_update(int per)
   }
 }
 
-void frmMain::on_config_default_pushButton_clicked()
+void MainWindow::on_config_default_pushButton_clicked()
 {
     if(!this->connected)
     {

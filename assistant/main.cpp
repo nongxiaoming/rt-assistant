@@ -1,4 +1,4 @@
-#include "frmmain.h"
+#include "mainwindow.h"
 #include <QApplication>
 #include "api/appinit.h"
 
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     AppInit *init = new AppInit;
     init->Load();
 
-    frmMain w;
+    MainWindow w;
     w.show();
 
     return a.exec();

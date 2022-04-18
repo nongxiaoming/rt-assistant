@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>frmMain</class>
- <widget class="QDialog" name="frmMain">
+ <class>MainWindow</class>
+ <widget class="QDialog" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -115,13 +115,6 @@
           </widget>
          </item>
          <item>
-          <widget class="Line" name="line_2">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
           <widget class="QToolButton" name="btn11">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -130,7 +123,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>设备状态</string>
+            <string>状态概览</string>
            </property>
           </widget>
          </item>
@@ -156,7 +149,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>固件升级</string>
+            <string>飞行设置</string>
            </property>
           </widget>
          </item>
@@ -169,7 +162,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>批量升级</string>
+            <string>设备设置</string>
            </property>
           </widget>
          </item>
@@ -182,7 +175,46 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>系统重启</string>
+            <string>模拟飞行</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="btn16">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>命令终端</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="btn17">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>固件升级</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="btn18">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>日志记录</string>
            </property>
           </widget>
          </item>

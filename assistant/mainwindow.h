@@ -1,5 +1,5 @@
-#ifndef FRMMAIN_H
-#define FRMMAIN_H
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
 #include <QDialog>
 #include <QSerialPort>
@@ -9,16 +9,16 @@
 
 namespace Ui
 {
-    class frmMain;
+    class MainWindow;
 }
 
-class frmMain : public QDialog
+class MainWindow : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit frmMain(QWidget *parent = 0);
-    ~frmMain();
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
 
 
 private slots:
@@ -44,7 +44,7 @@ private slots:
      void on_config_default_pushButton_clicked();
 
 private:
-    Ui::frmMain *ui;
+    Ui::MainWindow *ui;
 
      QMenu *m_menu;
 
@@ -85,4 +85,4 @@ private:
     int language_index;
 };
 
-#endif // FRMMAIN_H
+#endif // MAINWINDOW_H
