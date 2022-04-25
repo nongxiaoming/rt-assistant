@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QDialog>
+#include <QMainWindow>
 #include <QSerialPort>
 #include <QTimer>
 #include <QToolButton>
@@ -12,7 +12,7 @@ namespace Ui
     class MainWindow;
 }
 
-class MainWindow : public QDialog
+class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
