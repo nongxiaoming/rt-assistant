@@ -135,6 +135,9 @@ void MainWindow::InitStyle()
         i++;
     }
     langGroup->setExclusive (true);
+    ui->style_comboBox->addItems(name);
+    QObject::connect(ui->style_comboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(changeStyle(int)));
+    ui->style_comboBox->setCurrentIndex(0);
 
     m_menu->addSeparator();
     m_menu->addAction(QIcon(":/res/image/new_32.png"),tr("新版特性"));
@@ -149,24 +152,6 @@ void MainWindow::InitStyle()
 void MainWindow::showRightMenu()
 {
     m_menu->exec(QCursor::pos());
-}
-void MainWindow::changeStyle()
-{
-    int i = 0;
-    foreach(QAction *act,this->skin_action_list)
-    {
-        if(act->isChecked())
-        {
-            if(this->skin_index!=i)
-            {
-                this->skin_index = i;
-                changeStyle(i);
-            }
-
-        }
-        i++;
-    }
-
 }
 
 void MainWindow::changeStyle(int index)

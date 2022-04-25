@@ -31,7 +31,7 @@ private slots:
 
     void btnClick1();
 
-    void changeStyle();
+    void changeStyle(int index);
 
     void changeLanguage();
 
@@ -51,8 +51,6 @@ private:
     void InitStyle();   //初始化无边框窗体
 
     QRect location;     //鼠标移动窗体后的坐标位置
-
-    void changeStyle(int index);
 
     void Translate(int index);
 
