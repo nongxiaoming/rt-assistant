@@ -57,18 +57,16 @@ void MainWindow::InitStyle()
     this->location = this->geometry();
     this->setProperty("form", true);
     this->setProperty("CanMove", true);
-    setAttribute(Qt::WA_DeleteOnClose);
-    setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint  | Qt::WindowCloseButtonHint | Qt::CustomizeWindowHint);
     UIHelper::SetStyle(":/qss/blue.css");
 
     //设置对应载体的属性 可自行注释看效果
     ui->widget1->setProperty("flag", "left");
 
-
     //设置按钮的固定高度
     QStringList qss;
     qss.append(QString("QWidget#widget1 QAbstractButton{min-height:%1px;max-height:%1px;}").arg(32));
     this->setStyleSheet(qss.join(""));
+
     //准备导航的按钮集合
     //准备对应的图形字体集合
     pixChar << 0xf0e4 << 0xf013 << 0xf1d8 << 0xf085  << 0xf072 << 0xf120 << 0xf021  << 0xf15c;
@@ -92,25 +90,10 @@ void MainWindow::InitStyle()
     name << "银色" << "蓝色" << "浅蓝色" << "深蓝色" << "灰色" << "浅灰色" << "深灰色" << "黑色"
          << "浅黑色" << "深黑色" << "PS黑色" << "黑色扁平" << "白色扁平";
 
-    this->m_menu = new QMenu(this);
-
     ui->style_comboBox->addItems(name);
     QObject::connect(ui->style_comboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(changeStyle(int)));
-    ui->style_comboBox->setCurrentIndex(0);
+    ui->style_comboBox->setCurrentIndex(this->skin_index);
 
-    m_menu->addSeparator();
-    m_menu->addAction(QIcon(":/res/image/new_32.png"),tr("新版特性"));
-    m_menu->addAction(QIcon(":/res/image/update_32.png"),tr("检查更新"));
-    m_menu->addSeparator();
-   QAction *m_about = new QAction(QIcon(":/res/image/us_32.png"),tr("关于软件"),this);
-   //connect(m_about,SIGNAL(triggered()), this, SLOT(action_about_clicked()));
-    m_menu->addAction(m_about);
-    QAction* m_support = new QAction(QIcon(":/res/image/about_32.png"),tr("技术支持"), this);
-    m_menu->addAction(m_support);
-}
-void MainWindow::showRightMenu()
-{
-    m_menu->exec(QCursor::pos());
 }
 
 void MainWindow::changeStyle(int index)
@@ -124,19 +107,7 @@ void MainWindow::changeStyle(int index)
 
 void MainWindow::changeLanguage()
 {
-    int i = 0;
-    foreach(QAction *act,this->language_action_list)
-    {
-        if(act->isChecked())
-        {
-            if(this->language_index!=i)
-            {
-            this->language_index = i;
-            this->Translate(i);
-            }
-        }
-        i++;
-    }
+
 }
 void MainWindow::Translate(int index)
 {

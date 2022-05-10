@@ -105,7 +105,7 @@
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../widgets/other/rc.qrc">:/image/logo.png</pixmap>
+             <pixmap resource="../../../work/CD1000/Software/tools/ConfigTool/widgets/other/rc.qrc">:/image/logo.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -598,8 +598,6 @@ border-color: rgba(255, 255, 255, 0);</string>
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../widgets/other/rc.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

@@ -35,8 +35,6 @@ private slots:
 
     void changeLanguage();
 
-     void showRightMenu();
-
      void update_log_output(QString info);
 
      void progressBar_update(int val);
@@ -45,8 +43,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-
-     QMenu *m_menu;
 
     void InitStyle();   //初始化无边框窗体
 
@@ -72,10 +68,6 @@ private:
     QList<int> pixChar;
 
     QList<QToolButton *> btns1;
-
-    QList<QAction *> skin_action_list;
-
-    QList<QAction *> language_action_list;
 
     QHostAddress DeviceIP;
 
