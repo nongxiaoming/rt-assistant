@@ -27,7 +27,11 @@ background-color:rgba(0,0,0,0);
 border-style:none;
 }
 
-
+QLabel#version_label{
+background-color: rgba(255, 255, 255, 0);
+border-color: rgba(255, 255, 255, 0);
+color:rgba(255, 255, 255, 255);;
+}
 
 QWidget#widget_frm>QLabel{
 border-style:none;
@@ -179,6 +183,12 @@ border-left-color:#B4C2D7;
 
 QComboBox::down-arrow,QDateEdit::down-arrow,QTimeEdit::down-arrow,QDateTimeEdit::down-arrow{
 image:url(:/image/add_bottom.png);
+}
+
+QComboBox#style_comboBox,QComboBox#i18n_comboBox{
+background-color: rgba(255, 255, 255, 0);
+border-color: rgba(255, 255, 255, 0);
+color:rgba(255, 255, 255, 255);;
 }
 
 QMenu{

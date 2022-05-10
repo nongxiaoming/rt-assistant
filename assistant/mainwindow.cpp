@@ -38,8 +38,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QObject::connect(this->timer,SIGNAL(timeout()),this,SLOT(timeout()));
 
-    //QObject::connect(Communication::Instance(),&Communication::MsgReady,this,&data_parse_ready);
-
   this->check_ver = 0;
 
 }
@@ -96,45 +94,6 @@ void MainWindow::InitStyle()
 
     this->m_menu = new QMenu(this);
 
-    QMenu* skenMenu = this->m_menu->addMenu (QIcon(":/res/image/skens_32.png"),tr("更换皮肤"));
-
-    QActionGroup *skenGroup = new QActionGroup(this);
-
-    quint8 i = 0;
-    foreach (QString str, name) {
-        QAction *action = skenMenu->addAction(str);
-        skenGroup->addAction(action);
-        action->setCheckable(true);
-        this->skin_action_list.append(action);
-        if(i==this->skin_index)
-        {
-            action->setChecked(true);
-        }
-        connect(action, SIGNAL(triggered(bool)), this, SLOT(changeStyle()));
-        i++;
-    }
-    this->changeStyle(this->skin_index);
-    skenGroup->setExclusive (true);
-
-    //加入语言选择菜单
-    QMenu* langMenu = this->m_menu->addMenu (QIcon(":/res/image/skens_32.png"),tr("语言选择"));
-    QActionGroup *langGroup = new QActionGroup(this);
-    QStringList lang_str_list;
-    lang_str_list << tr("简体中文") << tr("English");
-    i = 0;
-    foreach (QString str, lang_str_list) {
-        QAction *action = langMenu->addAction(str);
-        langGroup->addAction(action);
-        action->setCheckable(true);
-        if(i==this->language_index)
-        {
-          action->setChecked(true);
-        }
-        connect(action, SIGNAL(triggered(bool)), this, SLOT(changeLanguage()));
-        this->language_action_list.append(action);
-        i++;
-    }
-    langGroup->setExclusive (true);
     ui->style_comboBox->addItems(name);
     QObject::connect(ui->style_comboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(changeStyle(int)));
     ui->style_comboBox->setCurrentIndex(0);
@@ -162,6 +121,7 @@ void MainWindow::changeStyle(int index)
     this->skin_index = index;
     UIHelper::SetStyle(file_name[index]);
 }
+
 void MainWindow::changeLanguage()
 {
     int i = 0;

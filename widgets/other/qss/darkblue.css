@@ -68,6 +68,12 @@ border:1px solid #00BB9E;
 background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #033967,stop:1 #033967);
 }
 
+QLabel#version_label{
+background-color: rgba(255, 255, 255, 0);
+border-color: rgba(255, 255, 255, 0);
+color:rgba(255, 255, 255, 255);;
+}
+
 QLineEdit,QTextEdit,QPlainTextEdit,QSpinBox,QDoubleSpinBox,QComboBox,QDateEdit,QTimeEdit,QDateTimeEdit{
 border:1px solid #132743;
 border-radius:3px;
@@ -241,6 +247,12 @@ border-left-color:#132743;
 
 QComboBox::drop-down:on{
 top:1px;
+}
+
+QComboBox#style_comboBox,QComboBox#i18n_comboBox{
+background-color: rgba(255, 255, 255, 0);
+border-color: rgba(255, 255, 255, 0);
+color:rgba(255, 255, 255, 255);;
 }
 
 QMenuBar::item{
