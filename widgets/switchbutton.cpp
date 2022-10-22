@@ -5,7 +5,9 @@
 #include "qevent.h"
 #include "qtimer.h"
 #include "qdebug.h"
-
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 13, 0))
+#include <QPainterPath>
+#endif
 SwitchButton::SwitchButton(QWidget *parent): QWidget(parent)
 {
     space = 2;

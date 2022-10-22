@@ -5,6 +5,9 @@
 #include "qtimer.h"
 #include "qmath.h"
 #include "qdebug.h"
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 13, 0))
+#include <QPainterPath>
+#endif
 
 ProgressBarWait::ProgressBarWait(QWidget *parent) : QWidget(parent)
 {
