@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include <QDialog>
 #include <QSerialPort>
 #include <QTimer>
 #include <QToolButton>
@@ -12,7 +12,7 @@ namespace Ui
     class MainWindow;
 }
 
-class MainWindow : public QMainWindow
+class MainWindow : public QDialog
 {
     Q_OBJECT
 
@@ -45,6 +45,8 @@ private:
     Ui::MainWindow *ui;
 
     void InitStyle();   //初始化无边框窗体
+
+    bool max;           //是否处于最大化状态
 
     QRect location;     //鼠标移动窗体后的坐标位置
 

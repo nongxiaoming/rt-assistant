@@ -4,11 +4,10 @@
 #include <QSerialPortInfo>
 
 MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
+    QDialog(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
 
      QString config_path = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
     if(QFile::exists(config_path+"/settings.ini"))
@@ -52,18 +51,26 @@ MainWindow::~MainWindow()
 
 void MainWindow::InitStyle()
 {
+    this->max = false;
     this->location = this->geometry();
-    this->setProperty("form", true);
+    this->setProperty("Form", true);
     this->setProperty("CanMove", true);
-    UIHelper::SetStyle(":/qss/blue.css");
+    this->setWindowTitle(ui->lab_Title->text());
+    //设置窗体标题栏隐藏
+    this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinimizeButtonHint);
+    //安装事件监听器,让标题栏识别鼠标双击
+    ui->lab_Title->installEventFilter(this);
 
-    //设置对应载体的属性 可自行注释看效果
-    ui->widget1->setProperty("flag", "left");
+    IconHelper::Instance()->SetIcon(ui->btnMenu_Close, QChar(0xf00d));
+    IconHelper::Instance()->SetIcon(ui->btnMenu_Max, QChar(0xf2d0));
+    IconHelper::Instance()->SetIcon(ui->btnMenu_Min, QChar(0xf068));
+    IconHelper::Instance()->SetIcon(ui->lab_Ico, QChar(0xf085));
+    connect(ui->btnMenu_Close, SIGNAL(clicked()), this, SLOT(close()));
+    connect(ui->btnMenu_Min, SIGNAL(clicked()), this, SLOT(showMinimized()));
 
-    //设置按钮的固定高度
-    QStringList qss;
-    qss.append(QString("QWidget#widget1 QAbstractButton{min-height:%1px;max-height:%1px;}").arg(32));
-    this->setStyleSheet(qss.join(""));
+    UIHelper::SetStyle(":/qss/dev.css");
+
+
 
     //准备导航的按钮集合
     //准备对应的图形字体集合
@@ -97,7 +104,7 @@ void MainWindow::InitStyle()
 void MainWindow::changeStyle(int index)
 {
     QStringList file_name;
-    file_name << ":/qss/silvery.css" << ":/qss/blue.css" << ":/qss/lightblue.css" << ":/qss/darkblue.css" << ":/qss/gray.css" << ":/qss/lightgray.css" << ":/qss/darkgray.css" << ":/qss/black.css"
+    file_name << ":/qss/silvery.css" << ":/qss/dev.css" << ":/qss/lightblue.css" << ":/qss/darkblue.css" << ":/qss/gray.css" << ":/qss/lightgray.css" << ":/qss/darkgray.css" << ":/qss/black.css"
          << ":/qss/lightblack.css" << ":/qss/darkblack.css" << ":/qss/psblack.css" << ":/qss/flatblack.css" << ":/qss/flatwhite.css";
     this->skin_index = index;
     UIHelper::SetStyle(file_name[index]);
