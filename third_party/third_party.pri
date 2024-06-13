@@ -14,8 +14,7 @@ SOURCES += \
     $$PWD/qhexedit/commands.cpp\
     $$PWD/qhexedit/qhexedit.cpp\
     $$PWD/qhexedit/qhexedit_p.cpp\
-    $$PWD/qhexedit/xbytearray.cpp\
-    $$PWD/qcustomplot/qcustomplot.cpp
+    $$PWD/qhexedit/xbytearray.cpp
 
 HEADERS  += \
     $$PWD/aes/aes.h \
@@ -23,7 +22,8 @@ HEADERS  += \
     $$PWD/qhexedit/commands.h\
     $$PWD/qhexedit/qhexedit.h\
     $$PWD/qhexedit/qhexedit_p.h\
-    $$PWD/qhexedit/xbytearray.h\
-    $$PWD/qcustomplot/qcustomplot.h
+    $$PWD/qhexedit/xbytearray.h
 
 include($$PWD/log4qt/log4qt.pri)
+
+include($$PWD/dap/dap.pri)

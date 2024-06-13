@@ -105,114 +105,10 @@
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../../../work/CD1000/Software/tools/ConfigTool/widgets/other/rc.qrc">:/image/logo.png</pixmap>
+             <pixmap resource="../widgets/other/rc.qrc">:/image/logo.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QToolButton" name="btn11">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>状态概览</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QToolButton" name="btn12">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>基本设置</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QToolButton" name="btn13">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>飞行设置</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QToolButton" name="btn14">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>设备设置</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QToolButton" name="btn15">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>模拟飞行</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QToolButton" name="btn16">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>命令终端</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QToolButton" name="btn17">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>固件升级</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QToolButton" name="btn18">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>日志记录</string>
             </property>
            </widget>
           </item>
@@ -598,6 +494,8 @@ border-color: rgba(255, 255, 255, 0);</string>
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../widgets/other/rc.qrc"/>
+ </resources>
  <connections/>
 </ui>

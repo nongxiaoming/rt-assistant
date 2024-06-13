@@ -2,8 +2,6 @@
 #include "ui_mainwindow.h"
 #include "api/uihelper.h"
 #include <QSerialPortInfo>
-#include "searchfrm.h"
-#include "aes.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -69,8 +67,8 @@ void MainWindow::InitStyle()
 
     //准备导航的按钮集合
     //准备对应的图形字体集合
-    pixChar << 0xf0e4 << 0xf013 << 0xf1d8 << 0xf085  << 0xf072 << 0xf120 << 0xf021  << 0xf15c;
-    btns1 << ui->btn11 << ui->btn12 << ui->btn13 << ui->btn14 << ui->btn15 << ui->btn16 << ui->btn17<< ui->btn18;
+    //pixChar << 0xf0e4 << 0xf013 << 0xf1d8 << 0xf085  << 0xf072 << 0xf120 << 0xf021  << 0xf15c;
+    //btns1 << ui->btn11 << ui->btn12 << ui->btn13 << ui->btn14 << ui->btn15 << ui->btn16 << ui->btn17<< ui->btn18;
 
     //设置对应的按钮的图标显示方案以及是否可以选中以及对应的单击事件
     int count = btns1.count();
@@ -83,7 +81,7 @@ void MainWindow::InitStyle()
     IconHelper::Instance()->setStyle(ui->widget1, btns1, pixChar, 20, 40, 35, "left", 3,
                                      "#609EE9","#434D5C","#1D2530","#F5F7FA","#4B78AF");
     //默认选中哪个按钮
-    ui->btn11->click();
+    //ui->btn11->click();
 
     //添加换肤菜单
     QStringList name;

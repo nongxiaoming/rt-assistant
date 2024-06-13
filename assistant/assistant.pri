@@ -7,17 +7,14 @@
 INCLUDEPATH += $$PWD
 
 SOURCES += $$PWD/main.cpp\
-           $$PWD/mainwindow.cpp \
-           $$PWD/searchfrm.cpp
+           $$PWD/mainwindow.cpp
 
 
 HEADERS  += \
-            $$PWD/mainwindow.h \
-            $$PWD/searchfrm.h
+            $$PWD/mainwindow.h
 
 
 
 FORMS    += \
-            $$PWD/mainwindow.ui \
-            $$PWD/searchfrm.ui
+            $$PWD/mainwindow.ui
 

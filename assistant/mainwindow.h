@@ -69,7 +69,6 @@ private:
 
     QList<QToolButton *> btns1;
 
-    QHostAddress DeviceIP;
 
     int skin_index;
     int language_index;
