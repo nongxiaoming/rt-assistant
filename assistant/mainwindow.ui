@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
-    <height>820</height>
+    <width>1294</width>
+    <height>851</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -264,92 +264,289 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QWidget" name="widget1" native="true">
-         <property name="geometry">
-          <rect>
-           <x>800</x>
-           <y>80</y>
-           <width>180</width>
-           <height>591</height>
-          </rect>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>180</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>120</width>
-           <height>65536</height>
-          </size>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="logo_img">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>50</height>
-             </size>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QWidget" name="widget1" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>120</width>
+             <height>65536</height>
+            </size>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <property name="spacing">
+             <number>5</number>
             </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>50</height>
-             </size>
+            <property name="leftMargin">
+             <number>0</number>
             </property>
-            <property name="text">
-             <string/>
+            <property name="topMargin">
+             <number>2</number>
             </property>
-            <property name="pixmap">
-             <pixmap resource="../widgets/other/rc.qrc">:/image/logo.png</pixmap>
+            <property name="rightMargin">
+             <number>0</number>
             </property>
-            <property name="scaledContents">
-             <bool>true</bool>
+            <property name="bottomMargin">
+             <number>2</number>
             </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="verticalSpacer1">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>366</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QWidget" name="widget" native="true">
-            <layout class="QVBoxLayout" name="verticalLayout_7">
-             <property name="leftMargin">
-              <number>15</number>
-             </property>
-             <property name="rightMargin">
-              <number>9</number>
-             </property>
-             <item>
+            <item>
+             <widget class="QLabel" name="logo_img">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../widgets/other/rc.qrc">:/image/logo.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="PanelItem" name="link_panel" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>300</height>
+               </size>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,2">
+                 <item>
+                  <widget class="QLabel" name="label">
+                   <property name="text">
+                    <string>设  备:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,2">
+                 <item>
+                  <widget class="QLabel" name="label_4">
+                   <property name="text">
+                    <string>系列号:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_2">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="0,2">
+                 <item>
+                  <widget class="QLabel" name="label_6">
+                   <property name="text">
+                    <string>目标芯片:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_4"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="0,2">
+                 <item>
+                  <widget class="QLabel" name="label_7">
+                   <property name="text">
+                    <string>端  口:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_5"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="0,2">
+                 <item>
+                  <widget class="QLabel" name="label_5">
+                   <property name="text">
+                    <string>频  率:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_3"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="0,2">
+                 <item>
+                  <widget class="QLabel" name="label_8">
+                   <property name="text">
+                    <string>复位模式:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_6"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_10">
+                 <item>
+                  <spacer name="horizontalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="connect_pushButton">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>连接</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="PanelItem" name="prog_panel" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>250</height>
+               </size>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_2">
+               <property name="topMargin">
+                <number>20</number>
+               </property>
+               <item>
+                <widget class="QPushButton" name="pushButton">
+                 <property name="text">
+                  <string>锁定芯片</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../widgets/other/rc.qrc">
+                   <normaloff>:/image/btn_ok.png</normaloff>:/image/btn_ok.png</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_2">
+                 <property name="text">
+                  <string>解锁芯片</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_3">
+                 <property name="text">
+                  <string>擦除芯片</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_4">
+                 <property name="text">
+                  <string>擦除扇区</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_5">
+                 <property name="text">
+                  <string>烧写与校验</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer1">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>366</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="PanelItem" name="target_panel" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>120</height>
+               </size>
+              </property>
               <widget class="QComboBox" name="i18n_comboBox">
+               <property name="geometry">
+                <rect>
+                 <x>60</x>
+                 <y>20</y>
+                 <width>100</width>
+                 <height>22</height>
+                </rect>
+               </property>
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -389,9 +586,15 @@ border-color: rgba(255, 255, 255, 0);</string>
                 </property>
                </item>
               </widget>
-             </item>
-             <item>
               <widget class="QComboBox" name="style_comboBox">
+               <property name="geometry">
+                <rect>
+                 <x>60</x>
+                 <y>60</y>
+                 <width>100</width>
+                 <height>22</height>
+                </rect>
+               </property>
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -409,198 +612,87 @@ border-color: rgba(255, 255, 255, 0);</string>
 border-color: rgba(255, 255, 255, 0);</string>
                </property>
               </widget>
-             </item>
-             <item>
               <widget class="QLabel" name="version_label">
+               <property name="geometry">
+                <rect>
+                 <x>30</x>
+                 <y>100</y>
+                 <width>176</width>
+                 <height>12</height>
+                </rect>
+               </property>
                <property name="text">
                 <string>版本:V1.0.0</string>
                </property>
               </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSplitter" name="splitter">
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <widget class="QTabWidget" name="tabWidget">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <widget class="QWidget" name="tab">
+             <attribute name="title">
+              <string> 设备内存</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="0" column="0">
+               <widget class="QHexEdit" name="cfHexEdit" native="true"/>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+           <widget class="QGroupBox" name="groupBox_28">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>提示信息</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <property name="spacing">
+              <number>6</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="bottomMargin">
+              <number>8</number>
+             </property>
+             <item>
+              <widget class="QTextEdit" name="Log_textEdit"/>
              </item>
             </layout>
            </widget>
-          </item>
-         </layout>
-        </widget>
-        <widget class="QGroupBox" name="groupBox_28">
-         <property name="geometry">
-          <rect>
-           <x>420</x>
-           <y>550</y>
-           <width>280</width>
-           <height>119</height>
-          </rect>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="title">
-          <string>提示信息</string>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_7">
-          <property name="spacing">
-           <number>6</number>
-          </property>
-          <property name="topMargin">
-           <number>20</number>
-          </property>
-          <property name="bottomMargin">
-           <number>8</number>
-          </property>
-          <item>
-           <widget class="QTextEdit" name="Log_textEdit"/>
-          </item>
-         </layout>
-        </widget>
-        <widget class="QGroupBox" name="groupBox_24">
-         <property name="geometry">
-          <rect>
-           <x>290</x>
-           <y>140</y>
-           <width>361</width>
-           <height>291</height>
-          </rect>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="title">
-          <string>固件数据</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
-           <widget class="QHexEdit" name="cfHexEdit" native="true"/>
-          </item>
-         </layout>
-        </widget>
-        <widget class="QGroupBox" name="groupBox_34">
-         <property name="geometry">
-          <rect>
-           <x>190</x>
-           <y>480</y>
-           <width>192</width>
-           <height>243</height>
-          </rect>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>200</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="title">
-          <string>固件信息</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3" stretch="5,6,2,1">
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_2">
-            <item>
-             <widget class="QLabel" name="fw_name_label">
-              <property name="text">
-               <string>固件名称:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="fw_size_label">
-              <property name="text">
-               <string>固件大小:0字节</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="fw_type_label">
-              <property name="text">
-               <string>固件类型:0000</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="fw_ver_label">
-              <property name="text">
-               <string>固件版本:0.0.0</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="fw_create_label">
-              <property name="text">
-               <string>创建日期:</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_9">
-            <item>
-             <widget class="QPushButton" name="loadFW_Button">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>36</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>载入固件...</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="writeFW_Button">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>36</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>写入</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <widget class="QProgressBar" name="progressBar">
-            <property name="value">
-             <number>0</number>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
      </layout>
@@ -620,7 +712,7 @@ border-color: rgba(255, 255, 255, 0);</string>
        <height>24</height>
       </size>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1,0">
       <property name="leftMargin">
        <number>18</number>
       </property>
@@ -636,13 +728,20 @@ border-color: rgba(255, 255, 255, 0);</string>
       <item>
        <widget class="QLabel" name="label_2">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
         <property name="text">
-         <string>版本：V1.0.0</string>
+         <string>官网:www.rt-thread.org</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>论坛:www.rt-thread.org</string>
         </property>
        </widget>
       </item>
@@ -664,6 +763,12 @@ border-color: rgba(255, 255, 255, 0);</string>
    <class>QHexEdit</class>
    <extends>QWidget</extends>
    <header location="global">qhexedit.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PanelItem</class>
+   <extends>QWidget</extends>
+   <header>panelitem.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -30,9 +30,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->cfHexEdit->setReadOnly(true);
     this->connected = false;
     this->timer = new QTimer(this);
-
-
-
+    ui->splitter->setStretchFactor(0, 15);
+    ui->splitter->setStretchFactor(1, 1);
+    ui->link_panel->setTitleText(tr("连接设置"));
+    ui->target_panel->setTitleText(tr("编程设置"));
+    ui->prog_panel->setTitleText(tr("编程操作"));
+    ui->link_panel->setBorderColor(QColor("#2980B9"));
+    ui->target_panel->setBorderColor(QColor("#2980B9"));
+    ui->prog_panel->setBorderColor(QColor("#2980B9"));
     QObject::connect(this->timer,SIGNAL(timeout()),this,SLOT(timeout()));
 
   this->check_ver = 0;
@@ -46,6 +51,7 @@ void MainWindow::timeout()
 
 MainWindow::~MainWindow()
 {
+    this->SaveConfig();
     delete ui;
 }
 
@@ -199,7 +205,7 @@ void MainWindow::progressBar_update(int per)
   }
   if(per <=100 && per > 0)
   {
-   ui->progressBar->setValue(per);
+   //ui->progressBar->setValue(per);
   }
 }
 
@@ -211,4 +217,31 @@ void MainWindow::on_config_default_pushButton_clicked()
         return;
     }
 
+}
+
+bool MainWindow::eventFilter(QObject *obj, QEvent *event)
+{
+    if (event->type() == QEvent::MouseButtonDblClick) {
+        this->on_btnMenu_Max_clicked();
+        return true;
+    }
+    return QObject::eventFilter(obj, event);
+}
+
+
+void MainWindow::on_btnMenu_Max_clicked()
+{
+    if (max) {
+        this->setGeometry(location);
+        IconHelper::Instance()->SetIcon(ui->btnMenu_Max, QChar(0xf2d0));
+        ui->btnMenu_Max->setToolTip("最大化");
+        this->setProperty("CanMove", true);
+    } else {
+        location = this->geometry();
+        this->setGeometry(qApp->desktop()->availableGeometry());
+        IconHelper::Instance()->SetIcon(ui->btnMenu_Max, QChar(0xf2d2));
+        ui->btnMenu_Max->setToolTip("还原");
+        this->setProperty("CanMove", false);
+    }
+    max = !max;
 }

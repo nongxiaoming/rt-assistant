@@ -12,9 +12,7 @@ SOURCES += \
     $$PWD/api/appinit.cpp \
     $$PWD/frmmessagebox.cpp \
     $$PWD/frminputbox.cpp\
-    $$PWD/checkboxdelegate.cpp \
-    $$PWD/ipaddress.cpp \
-    $$PWD/progressbardelegate.cpp \
+    $$PWD/panelitem.cpp \
     $$PWD/progressbarwait.cpp \
     $$PWD/switchbutton.cpp
 
@@ -25,9 +23,7 @@ HEADERS  += \
     $$PWD/api/appinit.h \
     $$PWD/frmmessagebox.h \
     $$PWD/frminputbox.h \
-    $$PWD/checkboxdelegate.h \
-    $$PWD/ipaddress.h \
-    $$PWD/progressbardelegate.h \
+    $$PWD/panelitem.h \
     $$PWD/progressbarwait.h \
     $$PWD/switchbutton.h 
 

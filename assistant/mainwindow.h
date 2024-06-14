@@ -20,8 +20,13 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+protected:
+    bool eventFilter(QObject *obj, QEvent *event);
+
 
 private slots:
+
+    void on_btnMenu_Max_clicked();
 
     void on_loadFW_Button_clicked();
 
