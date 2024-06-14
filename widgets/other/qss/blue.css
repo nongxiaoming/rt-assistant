@@ -9,6 +9,22 @@ QWidget[form="bottom"]{
 background:#C0D3EB;
 }
 
+QWidget#MainWindow,QWidget[Form="true"]{
+border:1px solid #C0DCF2;
+border-radius:0px;
+}
+QWidget#widget_title{
+background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #DEF0FE,stop:1 #C0DEF6);
+}
+
+QLabel#lab_Ico,QLabel#lab_Title{
+border-radius:0px;
+color:#386487;
+background-color:rgba(0,0,0,0);
+border-style:none;
+}
+
+
 QWidget[form="bottom"] .QFrame{
 border:1px solid #324C6C;
 }

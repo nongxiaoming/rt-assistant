@@ -70,8 +70,6 @@ void MainWindow::InitStyle()
 
     UIHelper::SetStyle(":/qss/dev.css");
 
-
-
     //准备导航的按钮集合
     //准备对应的图形字体集合
     //pixChar << 0xf0e4 << 0xf013 << 0xf1d8 << 0xf085  << 0xf072 << 0xf120 << 0xf021  << 0xf15c;
@@ -143,7 +141,6 @@ void MainWindow::btnClick1()
         if (btns1.at(i) == b) {
             btns1.at(i)->setChecked(true);
             btns1.at(i)->setIcon(QIcon(IconHelper::Instance()->getPixmap(btns1.at(i), false)));
-            ui->stackedWidget->setCurrentIndex(i);
         } else {
             btns1.at(i)->setChecked(false);
             btns1.at(i)->setIcon(QIcon(IconHelper::Instance()->getPixmap(btns1.at(i), true)));

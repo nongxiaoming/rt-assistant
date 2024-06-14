@@ -5,6 +5,22 @@ border:1px solid #353535;
 border-radius:0px;
 }
 
+QWidget#MainWindow,QWidget[Form="true"]{
+border:1px solid #575757;
+border-radius:0px;
+}
+
+QWidget#widget_title{
+background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #4D4D4D,stop:1 #292929);
+}
+
+QLabel#lab_Ico,QLabel#lab_Title{
+border-radius:0px;
+color:#CACAD0;
+background-color:rgba(0,0,0,0);
+border-style:none;
+}
+
 QWidget[form="bottom"]{
 background:#4D4D4D;
 }

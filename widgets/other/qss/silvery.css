@@ -1,5 +1,21 @@
 QPalette{background:#F5F5F5;}*{outline:0px;color:#000000;}
 
+QWidget#MainWindow,QWidget[Form="true"]{
+border:1px solid #B2B6B9;
+border-radius:0px;
+}
+
+QWidget#widget_title{
+background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #E1E4E6,stop:1 #CCD3D9);
+}
+
+QLabel#lab_Ico,QLabel#lab_Title{
+border-radius:0px;
+color:#000000;
+background-color:rgba(0,0,0,0);
+border-style:none;
+}
+
 QWidget[form="true"],QLabel[frameShape="1"]{
 border:1px solid #B2B6B9;
 border-radius:0px;

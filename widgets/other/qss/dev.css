@@ -1,6 +1,6 @@
 QPalette{background:#CFDDEE;}QGroupBox#gboxDevicePanel>QLabel{color:#324C6C;}
 
-QWidget#frmMain,QWidget[Form="true"]{
+QWidget#MainWindow,QWidget[Form="true"]{
 border:1px solid #B4C2D7;
 border-radius:0px;
 }
@@ -27,11 +27,6 @@ background-color:rgba(0,0,0,0);
 border-style:none;
 }
 
-QLabel#version_label{
-background-color: rgba(255, 255, 255, 0);
-border-color: rgba(255, 255, 255, 0);
-color:rgba(255, 255, 255, 255);;
-}
 
 QWidget#widget_frm>QLabel{
 border-style:none;
@@ -185,11 +180,6 @@ QComboBox::down-arrow,QDateEdit::down-arrow,QTimeEdit::down-arrow,QDateTimeEdit:
 image:url(:/image/add_bottom.png);
 }
 
-QComboBox#style_comboBox,QComboBox#i18n_comboBox{
-background-color: rgba(255, 255, 255, 0);
-border-color: rgba(255, 255, 255, 0);
-color:rgba(255, 255, 255, 255);;
-}
 
 QMenu{
 color:#324C6C;
